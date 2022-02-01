@@ -35,5 +35,10 @@
             element2.value = '';
             element3.value = '';
         }
+
+        static deleteMoviesFromUI(deleteElement)
+        {
+            deleteElement.remove();
+        }   
         
     }

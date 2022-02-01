@@ -4,10 +4,12 @@ const directorElement = document.getElementById('director');
 const urlElement = document.getElementById('url');
 const moviesList = document.getElementById('films');
 const clearButton = document.getElementById('clear-films');
+const secondCardBody = document.querySelectorAll('.card-body')[1];
 
 (() => {
     form.addEventListener('submit',addTodo);
     document.addEventListener('DOMContentLoaded',loadAllMovies);
+    secondCardBody.addEventListener('click',deleteMovies);
 })();
 
 
@@ -38,5 +40,12 @@ function loadAllMovies()
 {
     let movies = Storage.getMoviesFromStorage();
     movies.forEach(movies => UI.addFilmToUI(movies));
+}
+
+
+function deleteMovies(e)
+{
+
+    e.target.id === 'delete-film' && UI.deleteMoviesFromUI(e.target.parentElement.parentElement) || Storage.deleteMoviesFromStorage(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
 }
 

@@ -13,4 +13,19 @@
             movies.push(newMovies);
             localStorage.setItem('movies',JSON.stringify(movies));
         }
+
+        static deleteMoviesFromStorage(deleteTodo)
+        {
+            let movies = this.getMoviesFromStorage();
+
+            movies.forEach( (movie,index) => {
+                if(movie.title === deleteTodo)
+                {
+                    movies.splice(index,1);
+                }
+            });
+
+            localStorage.setItem('movies',JSON.stringify(movies));
+        }
+
     }
