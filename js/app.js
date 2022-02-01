@@ -6,7 +6,30 @@ const moviesList = document.getElementById('films');
 const clearButton = document.getElementById('clear-films');
 
 (() => {
-
+    form.addEventListener('submit',addTodo);
 })();
+
+
+function addTodo(e)
+{
+    const title = titleElement.value.trim();
+    const director = directorElement.value.trim();
+    const url = urlElement.value.trim();
+
+    if(title === '' || director === '' || url === '')
+    {
+        alert('Bos deger girdiniz.');
+    }
+    else 
+    {
+        const movies = new Movies(title,director,url);
+        UI.addFilmToUI(movies);
+        Storage.addMoviesToStorage(movies);
+        alert('Basariyla eklenecek');
+    }
+
+
+    e.preventDefault();
+}
 
 
