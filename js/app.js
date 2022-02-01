@@ -29,6 +29,7 @@ function addTodo(e)
     }
 
 
+    UI.clearInputs(titleElement,directorElement,urlElement);
     e.preventDefault();
 }
 

@@ -28,5 +28,12 @@
             },1500);
 
         }
+
+        static clearInputs(element1,element2,element3)
+        {
+            element1.value = '';
+            element2.value = '';
+            element3.value = '';
+        }
         
     }
