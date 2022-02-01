@@ -7,6 +7,7 @@ const clearButton = document.getElementById('clear-films');
 
 (() => {
     form.addEventListener('submit',addTodo);
+    document.addEventListener('DOMContentLoaded',loadAllMovies);
 })();
 
 
@@ -33,4 +34,9 @@ function addTodo(e)
     e.preventDefault();
 }
 
+function loadAllMovies()
+{
+    let movies = Storage.getMoviesFromStorage();
+    movies.forEach(movies => UI.addFilmToUI(movies));
+}
 
