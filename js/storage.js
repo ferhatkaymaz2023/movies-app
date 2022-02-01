@@ -28,4 +28,10 @@
             localStorage.setItem('movies',JSON.stringify(movies));
         }
 
+        static clearAllMoviesFromStorage()
+        {
+            localStorage.removeItem('movies');
+        }
+    
+
     }

@@ -41,4 +41,14 @@
             deleteElement.remove();
         }   
         
+
+        static clearAllMoviesFromUI()
+        {
+            const movies = document.getElementById('films');
+            while(movies.firstElementChild != null)
+            {
+                moviesList.firstElementChild.remove();
+            }
+        }
+
     }

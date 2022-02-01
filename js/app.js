@@ -10,6 +10,7 @@ const secondCardBody = document.querySelectorAll('.card-body')[1];
     form.addEventListener('submit',addTodo);
     document.addEventListener('DOMContentLoaded',loadAllMovies);
     secondCardBody.addEventListener('click',deleteMovies);
+    clearButton.addEventListener('click',clearAllMovies);
 })();
 
 
@@ -49,3 +50,9 @@ function deleteMovies(e)
     e.target.id === 'delete-film' && UI.deleteMoviesFromUI(e.target.parentElement.parentElement) || Storage.deleteMoviesFromStorage(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
 }
 
+
+function clearAllMovies()
+{
+    UI.clearAllMoviesFromUI();
+    Storage.clearAllMoviesFromStorage();
+}
