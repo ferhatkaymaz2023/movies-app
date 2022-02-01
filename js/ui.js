@@ -13,5 +13,20 @@
             </tr>
             `;
         }
+
+        static showAlert(type,message)
+        {
+            const cardBody = document.querySelectorAll('.card-body')[0];
+            const alert = document.createElement('div');
+            alert.className = `alert alert-${type}`;
+            alert.textContent = message;
+
+            cardBody.appendChild(alert);
+
+            setTimeout(() => {
+                alert.remove();
+            },1500);
+
+        }
         
     }

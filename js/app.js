@@ -18,14 +18,14 @@ function addTodo(e)
 
     if(title === '' || director === '' || url === '')
     {
-        alert('Bos deger girdiniz.');
+        UI.showAlert('danger','Empty Input');
     }
     else 
     {
         const movies = new Movies(title,director,url);
         UI.addFilmToUI(movies);
         Storage.addMoviesToStorage(movies);
-        alert('Basariyla eklenecek');
+        UI.showAlert('success','Succeeded ');
     }
 
 
